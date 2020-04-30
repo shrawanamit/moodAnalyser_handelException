@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ExceptionJunit.MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-30T20:43:50" hostname="DESKTOP-LSKIBA4" time="0.003">
+  <properties/>
+  <testcase name="should_return_SAD_if_message_contains_sad" classname="com.ExceptionJunit.MoodAnalyserTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
