@@ -22,11 +22,35 @@ public class MoodAnalyserTest {
         String mood_status = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", mood_status);
     }
+
     @Test
-    public void given_Null_shouldReturnHappy() throws MoodException{
+    public void given_NUll_shouldReturnHappy() {
         MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        thrown.expect(MoodException.class);
-        thrown.expectMessage("this is no mood");
-        String mood_status = moodAnalyser.analyseMood();
+        try{
+            moodAnalyser.analyseMood();
+        }catch (MoodException e){
+            Assert.assertEquals(MoodException.ExceptionType.ENTERED_NULL, e.type);
+        }
+
     }
+
+    @Test
+    public void given_Empty_shouldReturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        try{
+            moodAnalyser.analyseMood();
+        }catch (MoodException e){
+            Assert.assertEquals(MoodException.ExceptionType.ENTERED_EMPTY, e.type);
+        }
+
+
+    }
+
+//    @Test
+//    public void given_Null_shouldReturnHappy() throws MoodException{
+//        MoodAnalyser moodAnalyser = new MoodAnalyser();
+//        thrown.expect(MoodException.class);
+//        thrown.expectMessage("this is no mood");
+//        String mood_status = moodAnalyser.analyseMood();
+//    }
 }
